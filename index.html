@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="PulseAfrica — South African CV Analyser Top 50. Discover CV analysis platforms across South Africa.">
+<title>PulseAfrica | CV Analyser Top 50</title>
+
+<style>
+:root {
+  --bg: #070b14;
+  --panel: #0d1424;
+  --panel2: #111c32;
+  --navy: #14284b;
+  --blue: #477de0;
+  --lightblue: #83adff;
+  --white: #f5f7ff;
+  --muted: #8995ac;
+  --line: #202d45;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+header {
+  padding: 21px 6%;
+  border-bottom: 1px solid var(--line);
+  background: #070b14;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.brand {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+}
+.brand span { color: var(--lightblue); }
+.country {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 38px 5%;
+}
+.eyebrow {
+  color: var(--lightblue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(39px, 7vw, 72px);
+  letter-spacing: -3px;
+  line-height: .98;
+  margin: 18px 0;
+}
+h1 span { color: var(--lightblue); }
+.subtitle {
+  color: #a7b1c5;
+  max-width: 620px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.hero {
+  margin: 32px 0;
+  padding: 27px;
+  border: 1px solid #23395f;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 90% 10%, #1a3968 0%, transparent 55%),
+    linear-gradient(120deg, #101d35, #0c111e);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.hero h2 {
+  font-size: 30px;
+  margin: 11px 0 5px;
+  letter-spacing: -.8px;
+}
+.hero p { color: #a7b5cc; font-size: 13px; }
+.hero-rank {
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--lightblue);
+  letter-spacing: -3px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 25px 0 40px;
+}
+.stat {
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 13px;
+}
+.stat strong {
+  display: block;
+  font-size: 25px;
+  margin-bottom: 6px;
+}
+.stat span { color: var(--muted); font-size: 12px; }
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.section-title h2 { font-size: 23px; }
+.section-title small { color: var(--muted); }
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+input, select {
+  padding: 13px;
+  background: var(--panel);
+  color: var(--white);
+  border: 1px solid #263651;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+}
+input { flex: 1; min-width: 180px; }
+select { max-width: 100%; }
+input:focus, select:focus {
+  outline: 1px solid var(--lightblue);
+}
+.chart {
+  border-top: 1px solid var(--line);
+}
+.chart-head, .entry {
+  display: grid;
+  grid-template-columns: 35px 46px minmax(0,1fr) 105px;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 8px;
+}
+.chart-head {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.entry {
+  min-height: 76px;
+  border-top: 1px solid #19243a;
+  transition: background .18s;
+}
+.entry:hover { background: #0e1728; }
+.entry.hirely {
+  background: linear-gradient(90deg, #17335a55, transparent);
+}
+.number {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hirely .number {
+  color: var(--lightblue);
+  font-weight: 800;
+}
+.cover {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: var(--panel2);
+  border: 1px solid #2a3b58;
+  color: var(--lightblue);
+  font-size: 19px;
+  font-weight: 900;
+}
+.hirely .cover {
+  background: linear-gradient(145deg, #234f8e, #10213e);
+  border-color: #426fb1;
+  color: white;
+}
+.name {
+  font-size: 14px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+.by {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+.status {
+  text-align: right;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.hirely .status { color: var(--lightblue); }
+.note {
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.note strong { color: var(--white); }
+footer {
+  border-top: 1px solid var(--line);
+  padding: 27px 5%;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.9;
+}
+footer strong { color: var(--white); }
+@media(max-width:550px) {
+  header { padding: 19px 5%; }
+  .brand { font-size: 21px; }
+  .country { font-size: 9px; }
+  main { padding: 28px 4%; }
+  h1 { letter-spacing: -2px; }
+  .hero { padding: 19px; }
+  .hero-rank { font-size: 46px; }
+  .stats { gap: 7px; }
+  .stat { padding: 12px 8px; }
+  .stat strong { font-size: 20px; }
+  .stat span { font-size: 10px; }
+  .chart-head, .entry {
+    grid-template-columns: 24px 38px minmax(0,1fr) 72px;
+    gap: 8px;
+    padding: 12px 4px;
+  }
+  .cover { width: 38px; height: 38px; }
+  .name { font-size: 12px; }
+  .by { font-size: 10px; }
+  .status { font-size: 9px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="brand">Pulse<span>Africa</span></div>
+  <div class="country">SOUTH AFRICA 🇿🇦</div>
+</header>
+
+<main>
+  <div class="eyebrow">The independent industry chart</div>
+  <h1>CV ANALYSER<br><span>TOP 50.</span></h1>
+  <p class="subtitle">
+    The pulse of South Africa's CV analysis industry.
+    Discover CV analysis tools, explore emerging platforms,
+    and browse the names shaping the future of CV technology.
+  </p>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Featured new entry</div>
+      <h2>HIRELY</h2>
+      <div>By Uzukhanye Mlonyeni</div>
+      <p>Recently launched · South Africa</p>
+    </div>
+    <div class="hero-rank">#4</div>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <strong>50</strong>
+      <span>Chart positions</span>
+    </div>
+    <div class="stat">
+      <strong>01</strong>
+      <span>Featured new entry</span>
+    </div>
+    <div class="stat">
+      <strong>SA</strong>
+      <span>South African chart</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>The Top 50</h2>
+      <small id="resultCount">50 positions</small>
+    </div>
+
+    <div class="controls">
+      <input id="search" type="search"
+        placeholder="Search CV analysers..."
+        aria-label="Search CV analysers">
+
+      <select id="filter" aria-label="Filter chart">
+        <option value="all">All positions</option>
+        <option value="listed">Named platforms</option>
+        <option value="new">New entries</option>
+        <option value="open">Open positions</option>
+      </select>
+    </div>
+
+    <div class="chart">
+      <div class="chart-head">
+        <span>#</span>
+        <span>Logo</span>
+        <span>CV analyser</span>
+        <span>Status</span>
+      </div>
+      <div id="entries"></div>
+    </div>
+
+    <div class="note">
+      <strong>About PulseAfrica</strong><br>
+      PulseAfrica is an independent directory of CV analysis tools.
+      HIRELY is placed at #4 as an initial editorial placement.
+      Other chart positions are awaiting verified platform details.
+      Positions do not yet represent an independently verified
+      national ranking.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>PulseAfrica</strong><br>
+  South African CV Analyser Top 50<br>
+  An independent industry directory · South Africa
+</footer>
+
+<script>
+const platforms = {
+  4: {
+    name: "HIRELY",
+    creator: "By Uzukhanye Mlonyeni",
+    status: "New entry",
+    logo: "H"
+  }
+};
+
+const chart = Array.from({length: 50}, (_, index) => {
+  const rank = index + 1;
+  if (platforms[rank]) {
+    return {rank, ...platforms[rank], listed: true};
+  }
+  return {
+    rank,
+    name: `Open chart position #${rank}`,
+    creator: "Awaiting platform details",
+    status: "Open position",
+    logo: "+",
+    listed: false
+  };
+});
+
+const entries = document.getElementById("entries");
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
+}
+
+function renderChart() {
+  const query = search.value.toLowerCase().trim();
+  const mode = filter.value;
+
+  const results = chart.filter(item => {
+    const matchesSearch =
+      `${item.name} ${item.creator} ${item.rank}`
+      .toLowerCase().includes(query);
+
+    const matchesFilter =
+      mode === "all" ||
+      (mode === "listed" && item.listed) ||
+      (mode === "new" && item.status === "New entry") ||
+      (mode === "open" && !item.listed);
+
+    return matchesSearch && matchesFilter;
+  });
+
+  if (results.length === 0) {
+    entries.innerHTML =
+      '<div style="padding:30px;color:#8995ac;text-align:center">No matching entries found.</div>';
+  } else {
+    entries.innerHTML = results.map(item => `
+      <article class="entry ${item.name === "HIRELY" ? "hirely" : ""}">
+        <div class="number">${item.rank}</div>
+        <div class="cover">${escapeHTML(item.logo)}</div>
+        <div>
+          <div class="name">${escapeHTML(item.name)}</div>
+          <div class="by">${escapeHTML(item.creator)}</div>
+        </div>
+        <div class="status">${escapeHTML(item.status)}</div>
+      </article>
+    `).join("");
+  }
+
+  document.getElementById("resultCount").textContent =
+    `${results.length} of 50 positions`;
+}
+
+search.addEventListener("input", renderChart);
+filter.addEventListener("change", renderChart);
+renderChart();
+</script>
+</body>
+        </html>
+        
